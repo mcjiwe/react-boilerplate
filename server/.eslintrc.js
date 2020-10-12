@@ -19,6 +19,8 @@ module.exports = {
     "import"
   ],
   "rules": {
+    "consistent-return": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "no-console": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/prefer-default-export": "off",

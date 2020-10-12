@@ -2,11 +2,11 @@ const env = (environment: string) => {
   switch (environment) {
     case 'production':
       return {
-        apiUrl: '',
+        apiUrl: 'localhost:4000/',
       };
     default:
       return {
-        apiUrl: '',
+        apiUrl: 'localhost:4000/',
       };
   }
 };
