@@ -1,0 +1,51 @@
+{
+	"Create component styles": {
+		"prefix": "s",
+		"body": [
+			"import { StyleSheet } from 'react-native';",
+			"",
+			"interface ${TM_FILENAME_BASE}Props {}",
+			"",
+			"export default ({}: ${TM_FILENAME_BASE}Props) => StyleSheet.create({});"
+		],
+		"description": "Export styles created by React Native StyleSheet."
+	},
+	"Create component": {
+		"prefix": "c",
+		"body": [
+			"import React from 'react';",
+			"",
+			"import {View} from 'react-native';",
+			"",
+			"import styles from './$TM_FILENAME_BASE.styles';",
+			"",
+			"export const $TM_FILENAME_BASE = () => {return <View></View>;}"
+		],
+		"description": "Create component based on the filename."
+	},
+	"Create interface": {
+		"prefix": "i",
+		"body": [
+			"export interface $TM_FILENAME_BASE {}",
+			"",
+			"export const ${TM_FILENAME_BASE}Factory = (): $TM_FILENAME_BASE => {return {};};"
+		],
+		"description": "Create custom interface with a default factory."
+	},
+	"Create test": {
+		"prefix": "t",
+		"body": [
+			"import React from 'react';",
+			"",
+			"import { render, RenderAPI } from '@testing-library/react-native';",
+			"",
+			"describe('Test', () => { let r: RenderAPI;",
+			"",
+			"beforeEach(() => { r = render(); });",
+			"",
+			"test('Should match snapshot', () => { expect(r.toJSON()).toMatchSnapshot(); });",
+			"});"
+		],
+		"description": "Create a custom jest test."
+	}
+}

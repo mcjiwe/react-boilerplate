@@ -1,0 +1,50 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "msjsdiag.debugger-for-chrome"
+    ]
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+  },
+  "folders": [
+    {
+      "name": "App",
+      "path": "../"
+    },
+    {
+      "name": "Pages",
+      "path": "../src/pages"
+    },
+    {
+      "name": "Components",
+      "path": "../src/components"
+    },
+    {
+      "name": "Hooks",
+      "path": "../src/hooks"
+    },
+    {
+      "name": "Models",
+      "path": "../src/models"
+    },
+    {
+      "name": "Utilities",
+      "path": "../src/utils"
+    },
+    {
+      "name": "Constants",
+      "path": "../src/constants"
+    },
+    {
+      "name": "Assets",
+      "path": "../src/assets"
+    },
+  ]
+}
