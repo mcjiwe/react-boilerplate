@@ -3,6 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
 }

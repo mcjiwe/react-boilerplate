@@ -2,7 +2,8 @@
   "extensions": {
     "recommendations": [
       "dbaeumer.vscode-eslint",
-      "msjsdiag.debugger-for-chrome"
+      "msjsdiag.debugger-for-chrome",
+      "mike-co.import-sorter"
     ]
   },
   "settings": {
@@ -10,6 +11,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     },
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
   },
