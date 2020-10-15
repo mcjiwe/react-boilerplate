@@ -4,9 +4,11 @@
     "@typescript-eslint",
     "react",
     "react-hooks",
+    "prettier",
     "jest",
     "promise",
-    "jsx-a11y"
+    "jsx-a11y",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
@@ -17,12 +19,42 @@
     "plugin:jest/recommended",
     "plugin:promise/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "prettier",
     "prettier/react",
     "prettier/@typescript-eslint"
   ],
   "rules": {
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "promise/always-return": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   },
   "env": {
     "browser": true,

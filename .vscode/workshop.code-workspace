@@ -3,15 +3,19 @@
     "recommendations": [
       "dbaeumer.vscode-eslint",
       "msjsdiag.debugger-for-chrome",
-      "mike-co.import-sorter"
     ]
   },
   "settings": {
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    },
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": true
     },
-    "importSorter.generalConfiguration.sortOnBeforeSave": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
   },
@@ -19,6 +23,10 @@
     {
       "name": "App",
       "path": "../"
+    },
+    {
+      "name": "Source",
+      "path": "../src"
     },
     {
       "name": "Pages",

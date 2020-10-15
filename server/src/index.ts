@@ -1,5 +1,6 @@
 import Axios, { AxiosError, AxiosResponse } from 'axios';
 import bodyparser from 'body-parser';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import jwt from 'jsonwebtoken';
@@ -13,6 +14,7 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors());
 app.use(bodyparser.json());
 
 app.get('/', (req, res) => {
@@ -23,22 +25,32 @@ app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   const user = users.find((u) => {
-    return u.username === username && u.password === password;
+    return u.email === username && u.password === password;
   });
 
   if (user) {
     const accessToken = jwt.sign(
-      { username: user.username, role: user.role },
+      { email: user.email, role: user.role },
       accessTokenSecret,
       { expiresIn: '20m' }
     );
 
     res.json({
       accessToken,
+      user: {
+        email: user.email,
+        role: user.role,
+      },
     });
   } else {
-    res.send('Username or password incorrect');
+    res.status(401).send('Email or password incorrect.');
   }
+});
+
+app.post('/user', authenticateJWT, (req, res) => {
+  const user = req.user;
+
+  res.json({ user });
 });
 
 app.get('/tvshows/:page', authenticateJWT, (req, res) => {
@@ -51,7 +63,7 @@ app.get('/tvshows/:page', authenticateJWT, (req, res) => {
     .catch((error: AxiosError<APIErrorData>) =>
       res
         .status(error.response?.data.status_code ?? 500)
-        .send(error.response?.data)
+        .json(error.response?.data)
     );
 });
 

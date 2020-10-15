@@ -9,6 +9,12 @@ const axios = Axios.create({
 
 axios.interceptors.request.use(
   async (config) => {
+    const accessToken = localStorage.getItem('accessToken');
+
+    config.headers = {
+      authorization: 'Bearer ' + accessToken,
+    };
+
     // Return our config
     return config;
   },

@@ -2,12 +2,12 @@ export const accessTokenSecret = 'theloppacesstoken';
 
 export const users = [
   {
-    username: 'marcocruz',
+    email: 'marcocruz@test.pt',
     password: 'admin',
     role: 'admin',
   },
   {
-    username: 'testuser',
+    email: 'testuser@test.pt',
     password: 'user',
     role: 'user',
   },

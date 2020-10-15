@@ -1,25 +1,24 @@
-import './App.css';
-
 import React from 'react';
 
-import logo from './src/assets/logo.svg';
+import { Box, CssBaseline, ThemeProvider } from '@material-ui/core';
+
+import { theme } from './App.theme';
+import { Content } from './components/content/content';
+import { Footer } from './components/footer/footer';
+import { Navbar } from './components/navbar/navbar';
+import { SharedStateContainer } from './hooks/state/sharedState';
 
 export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box display="flex" flexDirection="column" minHeight="100vh">
+        <CssBaseline />
+        <SharedStateContainer.Provider>
+          <Navbar />
+          <Content />
+        </SharedStateContainer.Provider>
+        <Footer />
+      </Box>
+    </ThemeProvider>
   );
 };

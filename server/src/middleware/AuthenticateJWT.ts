@@ -10,8 +10,6 @@ export const authenticateJWT: RequestHandler = (req, res, next) => {
     const token = authHeader.split(' ')[1];
 
     jwt.verify(token, accessTokenSecret, (err, user) => {
-      console.log(user);
-
       if (err) {
         return res.sendStatus(403);
       }
