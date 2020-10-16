@@ -41,7 +41,7 @@ export const Login = ({ navigate }: RouteComponentProps) => {
   const emailRule =
     submitted &&
     (loginData.email === '' ||
-      !new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(loginData.email));
+      !new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/).test(loginData.email));
 
   const passwordRule =
     submitted && (loginData.password === '' || loginData.password.length < 6);
