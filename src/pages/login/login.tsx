@@ -44,7 +44,7 @@ export const Login = ({ navigate }: RouteComponentProps) => {
       !new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/).test(loginData.email));
 
   const passwordRule =
-    submitted && (loginData.password === '' || loginData.password.length < 6);
+    submitted && (loginData.password === '' || loginData.password.length < 4);
 
   return (
     <Container maxWidth="xs" className={classes.root}>
