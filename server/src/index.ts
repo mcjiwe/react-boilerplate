@@ -53,7 +53,7 @@ app.post('/user', authenticateJWT, (req, res) => {
   res.json({ user });
 });
 
-app.get('/tvshows/:page', authenticateJWT, (req, res) => {
+app.get('/tvshows/:page?', authenticateJWT, (req, res) => {
   const { page } = req.params;
 
   Axios.get(`${process.env.TMDB_URL}/tv/popular`, {

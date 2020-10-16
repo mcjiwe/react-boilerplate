@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { RouteComponentProps } from '@reach/router';
+import { useForm } from 'react-hook-form';
 
 import { useApi } from '../../hooks/api/api';
 import { LoginData } from '../../models/Data/Login';
@@ -15,6 +16,7 @@ import { useLoginStyles } from './login.styles';
 export const Login = ({ navigate }: RouteComponentProps) => {
   const classes = useLoginStyles();
   const { login } = useApi();
+  const { register, handleSubmit, errors } = useForm();
   const [loginData, setLoginData] = useState<LoginData>({
     email: '',
     password: '',

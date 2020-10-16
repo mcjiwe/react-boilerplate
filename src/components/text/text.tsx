@@ -3,7 +3,8 @@ import React from 'react';
 import { Box, Typography, TypographyProps } from '@material-ui/core';
 
 interface TextProps extends TypographyProps {
-  children: any;
+  children: string;
+  icon?: JSX.Element;
   size?: number | string;
   weight?: 'Regular' | 'Medium' | 'Bold';
   fontStyle?: 'normal' | 'italic' | 'oblique';
@@ -13,6 +14,7 @@ interface TextProps extends TypographyProps {
 
 export const Text = ({
   children,
+  icon,
   size,
   weight,
   fontStyle,
@@ -21,18 +23,19 @@ export const Text = ({
   ...props
 }: TextProps) => {
   return (
-    <Typography {...props}>
-      <Box
-        display="flex"
-        flexDirection="row"
-        alignItems="center"
-        fontSize={size}
-        fontWeight={'fontWeight' + weight}
-        fontStyle={fontStyle}
-        letterSpacing={letterSpacing}
-        m={margin ?? 0.5}>
-        {children}
-      </Box>
-    </Typography>
+    <Box display="flex" flexDirection="row" alignItems="center">
+      {icon}
+      <Typography {...props}>
+        <Box
+          component="span"
+          fontSize={size}
+          fontWeight={'fontWeight' + weight}
+          fontStyle={fontStyle}
+          letterSpacing={letterSpacing}
+          m={margin ?? 0.5}>
+          {children}
+        </Box>
+      </Typography>
+    </Box>
   );
 };

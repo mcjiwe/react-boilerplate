@@ -4,7 +4,6 @@ import {
   Box,
   Divider,
   Grid,
-  Icon,
   List,
   ListItem,
   ListItemIcon,
@@ -82,13 +81,16 @@ export const Frameworks = (props: RouteComponentProps) => {
     <Grid container direction="column" alignItems="center" justify="center">
       <Grid item>
         <Paper variant="elevation" className={styles.textContainer}>
-          <Text weight="Bold" variant="h3">
-            <img src={react} alt="logo" className={styles.icon} /> React
+          <Text
+            weight="Bold"
+            variant="h3"
+            icon={<img src={react} alt="logo" className={styles.icon} />}>
+            React
           </Text>
           <Text weight="Medium">Pros:</Text>
           <List dense>
             {reactPros.map((pros) => (
-              <ListItem>
+              <ListItem key={pros}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
@@ -100,7 +102,7 @@ export const Frameworks = (props: RouteComponentProps) => {
           <Text weight="Medium">Cons:</Text>
           <List dense>
             {reactCons.map((cons) => (
-              <ListItem>
+              <ListItem key={cons}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
@@ -113,13 +115,16 @@ export const Frameworks = (props: RouteComponentProps) => {
             <Divider />
           </Box>
 
-          <Text weight="Bold" variant="h3">
-            <img src={angular} alt="logo" className={styles.icon} /> Angular
+          <Text
+            weight="Bold"
+            variant="h3"
+            icon={<img src={angular} alt="logo" className={styles.icon} />}>
+            Angular
           </Text>
           <Text weight="Medium">Pros:</Text>
           <List dense>
             {angularPros.map((pros) => (
-              <ListItem>
+              <ListItem key={pros}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
@@ -129,12 +134,12 @@ export const Frameworks = (props: RouteComponentProps) => {
           </List>
           <Text weight="Medium">Cons:</Text>
           <List dense>
-            {angularCons.map((pros) => (
-              <ListItem>
+            {angularCons.map((cons) => (
+              <ListItem key={cons}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
-                <ListItemText primary={pros} />
+                <ListItemText primary={cons} />
               </ListItem>
             ))}
           </List>
@@ -143,13 +148,16 @@ export const Frameworks = (props: RouteComponentProps) => {
             <Divider />
           </Box>
 
-          <Text weight="Bold" variant="h3">
-            <img src={vue} alt="logo" className={styles.icon} /> Vue
+          <Text
+            weight="Bold"
+            variant="h3"
+            icon={<img src={vue} alt="logo" className={styles.icon} />}>
+            Vue
           </Text>
           <Text weight="Medium">Pros:</Text>
           <List dense>
             {vuePros.map((pros) => (
-              <ListItem>
+              <ListItem key={pros}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
@@ -159,12 +167,12 @@ export const Frameworks = (props: RouteComponentProps) => {
           </List>
           <Text weight="Medium">Cons:</Text>
           <List dense>
-            {vueCons.map((pros) => (
-              <ListItem>
+            {vueCons.map((cons) => (
+              <ListItem key={cons}>
                 <ListItemIcon>
                   <ChevronRightSharp />
                 </ListItemIcon>
-                <ListItemText primary={pros} />
+                <ListItemText primary={cons} />
               </ListItem>
             ))}
           </List>
@@ -176,7 +184,7 @@ export const Frameworks = (props: RouteComponentProps) => {
           <Text weight="Bold">Other popular frameworks:</Text>
           <List dense>
             {frameworks.map((framework) => (
-              <ListItem>
+              <ListItem key={framework}>
                 <ListItemIcon>
                   <LabelImportantSharp />
                 </ListItemIcon>

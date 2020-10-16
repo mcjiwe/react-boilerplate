@@ -35,7 +35,6 @@ export const useApi = () => {
         .post('/user')
         .then((response: AxiosResponse<UserResponse>) => {
           if (response.status === 200) {
-            console.log(response.data.user);
             setUser(response.data.user);
             return;
           }
@@ -50,11 +49,10 @@ export const useApi = () => {
     },
     getTVShows: (page?: number) => {
       return axios
-        .get('/tvshows' + `${page ? `/${page}` : ''}`)
+        .get(`/tvshows/${page}`)
         .then((response: AxiosResponse<TVShowsResponse>) => {
           if (response.status === 200) {
-            console.log(response);
-            return;
+            return response.data;
           }
         })
         .catch((e) => console.log(e.response?.data));

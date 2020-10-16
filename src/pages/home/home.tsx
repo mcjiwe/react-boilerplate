@@ -62,7 +62,10 @@ export const Home = (props: RouteComponentProps) => {
               subheader={<Text variant="body1">Web Architectures</Text>}
             />
             <CardContent>
-              <Text variant="h6">SPA vs MPA</Text>
+              <Text variant="body2">
+                Here we will go a bit about the strengths and weaknesses of an
+                SPA and an MPA.
+              </Text>
             </CardContent>
             <CardActions>
               <Button size="small" href="/architectures">
@@ -78,7 +81,9 @@ export const Home = (props: RouteComponentProps) => {
               subheader={<Text variant="body1">Rendering Methods</Text>}
             />
             <CardContent>
-              <Text variant="h6">SSR vs CSR</Text>
+              <Text variant="body2">
+                Here we will discusss the diferences between SSR and CSR.
+              </Text>
             </CardContent>
             <CardActions>
               <Button size="small" href="/methods">

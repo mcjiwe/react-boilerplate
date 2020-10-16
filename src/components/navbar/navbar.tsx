@@ -31,7 +31,7 @@ export const Navbar = () => {
           </Link>
         </Typography>
 
-        <Grid container spacing={2} justify="flex-end" xs={6}>
+        <Grid container item spacing={2} justify="flex-end" xs={6}>
           {state.user && (
             <Grid item>
               <Button
