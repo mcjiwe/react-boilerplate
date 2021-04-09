@@ -1,9 +1,5 @@
 import React from 'react';
 
 export default () => {
-  return (
-    <div>
-      <p>React App</p>
-    </div>
-  );
+  return <div>React Boilerplate with TypeScript + ESLint + Prettier</div>;
 };
